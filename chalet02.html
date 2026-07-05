@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شاليهات وإسطبل الرسن - شاليه 2</title>
+    <!-- Meta tags for SEO and responsiveness -->
+    <meta name="description"
+        content="استمتع بتجربة إقامة فاخرة وهادئة في شاليه مستقل ومنعزل تماماً داخل إسطبل خيول في ديراب. جولات خيل مجانية وإطلالة ساحرة على جبال طويق.">
+
+    <!-- Google Fonts - Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #2c3e2b;
+            /* أخضر داكن ملكي */
+            --primary-light: #3d543c;
+            --accent: #c5a880;
+            /* ذهبي راقي */
+            --accent-hover: #b3956d;
+            --bg-page: #f7f5f0;
+            /* بيج دافئ مريح للعين */
+            --card-bg: #ffffff;
+            --text-main: #3d342e;
+            /* بني دافئ داكن */
+            --text-muted: #73675f;
+            /* بني دافئ متوسط */
+            --white: #ffffff;
+            --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.03);
+            --shadow-md: 0 10px 30px rgba(44, 62, 43, 0.06);
+            --shadow-lg: 0 20px 40px rgba(44, 62, 43, 0.1);
+            --radius-lg: 16px;
+            --radius-md: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* تنسيقات التصميم العام */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Tajawal', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-page);
+            line-height: 1.7;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* الحاوية الرئيسية */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* الهيدر والبانر الرئيسي */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 45px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-md);
+            border-bottom: 4px solid var(--accent);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at top right, rgba(197, 168, 128, 0.15), transparent 60%);
+            pointer-events: none;
+        }
+
+        header h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* كرت المقدمة */
+        .intro-card {
+            background-color: var(--card-bg);
+            border-right: 5px solid var(--primary);
+            border-radius: var(--radius-md);
+            padding: 25px;
+            margin-bottom: 35px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .intro-card p {
+            font-size: 1.15rem;
+            color: var(--text-main);
+            text-align: justify;
+            font-weight: 500;
+        }
+
+        /* العناوين الجانبية */
+        .section-title {
+            color: var(--primary);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 40px 0 20px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(197, 168, 128, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* شبكة المميزات */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 35px;
+        }
+
+        /* كروت الميزات والتجارب */
+        .feature-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(44, 62, 43, 0.05);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent);
+        }
+
+        .feature-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        .feature-icon-wrapper {
+            width: 45px;
+            height: 45px;
+            background-color: rgba(44, 62, 43, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .feature-card h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .price-badge {
+            background-color: rgba(197, 168, 128, 0.15);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 15px;
+            align-self: flex-start;
+            border: 1px solid rgba(197, 168, 128, 0.3);
+        }
+
+        /* شبكة المرافق */
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+
+        .amenity-card {
+            background-color: var(--card-bg);
+            border-radius: var(--radius-md);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(44, 62, 43, 0.03);
+            transition: var(--transition);
+        }
+
+        .amenity-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(197, 168, 128, 0.5);
+            box-shadow: var(--shadow-md);
+        }
+
+        .amenity-icon {
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(197, 168, 128, 0.1);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .amenity-text {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        /* جدول التفاصيل والموقع */
+        .info-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: var(--card-bg);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 35px;
+            border: 1px solid rgba(44, 62, 43, 0.05);
+        }
+
+        .info-table tr:not(:last-child) td {
+            border-bottom: 1px solid rgba(44, 62, 43, 0.05);
+        }
+
+        .info-table td {
+            padding: 15px 20px;
+            font-size: 1.05rem;
+        }
+
+        .info-label {
+            font-weight: 700;
+            color: var(--primary);
+            width: 30%;
+            background-color: rgba(44, 62, 43, 0.02);
+        }
+
+        .info-val {
+            color: var(--text-main);
+        }
+
+        /* كرت التنبيهات */
+        .warning-card {
+            background-color: rgba(197, 168, 128, 0.08);
+            border: 1px dashed var(--accent);
+            border-radius: var(--radius-md);
+            padding: 25px;
+            margin-bottom: 35px;
+        }
+
+        .warning-card h4 {
+            color: #b05c36;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .warning-card ul {
+            list-style-type: none;
+        }
+
+        .warning-card li {
+            position: relative;
+            padding-right: 25px;
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .warning-card li:last-child {
+            margin-bottom: 0;
+        }
+
+        .warning-card li::before {
+            content: "•";
+            position: absolute;
+            right: 0;
+            color: var(--accent);
+            font-size: 1.8rem;
+            line-height: 1;
+            top: -2px;
+        }
+
+        /* معرض الصور */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow-sm);
+            border: 4px solid var(--card-bg);
+            transition: var(--transition);
+            aspect-ratio: 4 / 3;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            padding: 15px;
+            color: #ffffff;
+            opacity: 0;
+            transition: var(--transition);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay span {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* مودال عرض الصور Fullscreen Lightbox */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 85%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+
+        .lightbox-modal.active .lightbox-img {
+            transform: scale(1);
+        }
+
+        .lightbox-caption {
+            color: #ffffff;
+            margin-top: 15px;
+            font-size: 1.1rem;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -45px;
+            left: 0;
+            color: #ffffff;
+            font-size: 2.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+            background: none;
+            border: none;
+            outline: none;
+        }
+
+        .lightbox-close:hover {
+            color: var(--accent);
+        }
+
+        .lightbox-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ffffff;
+            font-size: 2.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            user-select: none;
+        }
+
+        .lightbox-arrow:hover {
+            background: rgba(197, 168, 128, 0.8);
+            color: var(--primary);
+        }
+
+        .lightbox-prev {
+            right: -65px;
+        }
+
+        .lightbox-next {
+            left: -65px;
+        }
+
+        @media (max-width: 768px) {
+            .lightbox-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 1.8rem;
+            }
+
+            .lightbox-prev {
+                right: -10px;
+                background: rgba(0, 0, 0, 0.5);
+            }
+
+            .lightbox-next {
+                left: -10px;
+                background: rgba(0, 0, 0, 0.5);
+            }
+
+            .lightbox-close {
+                left: 10px;
+                top: -50px;
+            }
+        }
+
+        /* تذييل الصفحة */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(44, 62, 43, 0.08);
+            font-size: 0.95rem;
+        }
+
+        footer strong {
+            color: var(--primary);
+        }
+
+        /* تأثيرات الاستجابة للهواتف المحمولة */
+        @media (max-width: 600px) {
+            header {
+                padding: 35px 15px;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .info-table td {
+                padding: 12px 15px;
+            }
+
+            .info-label {
+                width: 40%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- الهيدر والبانر الرئيسي -->
+        <header>
+            <h1>شاليهات وإسطبل الرسن</h1>
+            <p>شاليه 2 • ديراب</p>
+        </header>
+
+        <!-- كرت المقدمة -->
+        <section class="intro-card">
+            <p>هل تبحث عن عزلة ممتعة وإستجمام وتجربة مغايرة عن المألوف؟ نرحب بكم في شاليهنا الفريد الواقع في قلب منطقة
+                ديراب، حيث تلتقي إطلالة جبال طويق الساحرة بروح الأصالة، في شاليه مستقل ومنعزل تماماً داخل إسطبل خيول
+                لضمان خصوصيتكم الكاملة.</p>
+        </section>
+
+        <!-- الميزات والتجارب الحصرية -->
+        <h3 class="section-title">✨ مميزات وتجارب حصرية لضيوفنا</h3>
+        <div class="grid-layout">
+            <div class="feature-card">
+                <div>
+                    <div class="feature-header">
+                        <div class="feature-icon-wrapper">📸</div>
+                        <h4>جولة تصوير مجانية</h4>
+                    </div>
+                    <p>استمتع بجولة لمدة 15 دقيقة (بتنسيق مسبق مع الإدارة) لمشاهدة وتصوير الخيول العربية الأصيلة داخل
+                        الإسطبل والتقاط أجمل اللقطات التذكارية.</p>
+                </div>
+                <span class="price-badge">مجانًا للضيوف</span>
+            </div>
+
+            <div class="feature-card">
+                <div>
+                    <div class="feature-header">
+                        <div class="feature-icon-wrapper">🏇</div>
+                        <h4>تجربة ركوب الخيل</h4>
+                    </div>
+                    <p>عش متعة ركوب الخيل بخصوصية تامة تناسب العوائل والأفراد في ساحة الإسطبل (لمدة 45 دقيقة) برسوم
+                        إضافية رمزية برفقة مدرب مختص.</p>
+                </div>
+                <span class="price-badge">50 ريال فقط</span>
+            </div>
+        </div>
+
+        <!-- مرافق الشاليه ومواصفاته -->
+        <h3 class="section-title">🏡 مرافق الشاليه ومواصفاته</h3>
+        <div class="amenities-grid">
+            <div class="amenity-card">
+                <div class="amenity-icon">🏊</div>
+                <div class="amenity-text">مسبح منعش</div>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🛌</div>
+                <div class="amenity-text">غرفة نوم مريحة (لشخصين)</div>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🛋️</div>
+                <div class="amenity-text">مجلس داخلي كنب فسيح للجمعات</div>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🌳</div>
+                <div class="amenity-text">جلسات خارجية بإطلالة جبلية</div>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🍳</div>
+                <div class="amenity-text">مطبخ متكامل مجهز بالكامل</div>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🚽</div>
+                <div class="amenity-text">دورة مياه (كرسي عربي)</div>
+            </div>
+        </div>
+
+        <!-- تفاصيل إضافية -->
+        <h3 class="section-title">📊 معلومات وتفاصيل الشاليه</h3>
+        <table class="info-table">
+            <tr>
+                <td class="info-label">👥 السعة الاستيعابية</td>
+                <td class="info-val">الشاليه مجهز ومناسب لاستقبال من 10 إلى 15 أشخاص براحة تامة.</td>
+            </tr>
+            <tr>
+                <td class="info-label">📐 المساحة الإجمالية</td>
+                <td class="info-val">120 متر مربع.</td>
+            </tr>
+            <tr>
+                <td class="info-label">🏊 أبعاد وعمق المسبح</td>
+                <td class="info-val">6*4 متر وعمقه متدرج من 1 متر إلى 2 متر ويناسب الأطفال والكبار</td>
+            </tr>
+            <tr>
+                <td class="info-label">📍 الموقع (اللوكيشن)</td>
+                <td class="info-val">ديراب، خلف نادي ديراب للقولف .</td>
+            </tr>
+        </table>
+
+        <!-- أشياء يجب معرفتها قبل الحجز -->
+        <div class="warning-card">
+            <h4>📌 أشياء يجب معرفتها قبل الحجز:</h4>
+            <ul>
+                <li>لا يوجد سماعات داخل الشاليه، ولكن نوفر شاشات ذكية متكاملة في الغرف كبديل مميز لتشغيل ما تفضلونه.
+                </li>
+                <li>تطبيقات التوصيل والخدمات لا تصل للموقع في الغالب نظرًا لطبيعة المنطقة الريفية، لذا ننصح بشدة بجلب
+                    كافة احتياجاتكم وأغراضكم معكم للاستمتاع بتجربة الشواء والطبخ المتكاملة.</li>
+                <li>الجزء الأخير من الطريق المؤدي للشاليه عبارة عن ردمية (طريق ترابي غير مسفلت) بطول بسيط، ولكنه ممهد
+                    ومستوٍ تماماً وتستطيع كافة أنواع السيارات العبور منه بسهولة بما فيها السيارات الصغيرة المنخفضة.</li>
+                <li>الموقع الجغرافي يقع في منطقة هادئة خلف نادي ديراب للقولف.</li>
+                <li>يتم دفع تأمين مسترد عند تسجيل الخروج بقيمة 300 ريال سعودي، وذلك بعد التأكد من سلامة كافة مرافق
+                    الشاليه ومحتوياته.</li>
+            </ul>
+        </div>
+
+        <!-- ألبوم الصور -->
+        <h3 class="section-title">📸 ألبوم صور الشاليه</h3>
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox(0)">
+                <img src="images02/WhatsApp%20Image%202026-07-05%20at%202.39.33%20PM.jpeg"
+                    alt="صورة الشاليه ومرافقه الخارجية">
+                <div class="gallery-overlay">
+                    <span>صورة الشاليه ومرافقه الخارجية</span>
+                    <span>🔍</span>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(1)">
+                <img src="images02/WhatsApp%20Image%202026-07-05%20at%202.39.34%20PM.jpeg" alt="المجلس الداخلي الداخلي">
+                <div class="gallery-overlay">
+                    <span>المجلس الداخلي الداخلي</span>
+                    <span>🔍</span>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(2)">
+                <img src="images02/WhatsApp%20Image%202026-07-05%20at%20g2.39.34%20PM.jpeg" alt="المطبخ وتجهيزاته">
+                <div class="gallery-overlay">
+                    <span>المطبخ وتجهيزاته</span>
+                    <span>🔍</span>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(3)">
+                <img src="images02/WhatsApp%20Image%202026-07-05%20atgh%202.39.36%20PM.jpeg" alt="تفاصيل المسبح">
+                <div class="gallery-overlay">
+                    <span>تفاصيل المسبح</span>
+                    <span>🔍</span>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(4)">
+                <img src="images02/WhatsApp%20Image%202026-07dd-05%20at%202.39.36%20PM.jpeg"
+                    alt="إطلالة على المسبح الجلسة الخارجية">
+                <div class="gallery-overlay">
+                    <span>إطلالة على المسبح الجلسة الخارجية</span>
+
+                    <span>🔍</span>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(5)">
+                <img src="images02/WhatsApp%20Image%202026g-07-05%20at%202.39.36%20PM.jpeg" alt="دورة المياه والخدمات">
+                <div class="gallery-overlay">
+                    <span>دورة المياه والخدمات</span>
+                    <span>🔍</span>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(6)">
+                <img src="images02/WhatsApp%20Imagfge%202026-07-05%20at%202.39.35%20PM.jpeg" alt="غرفة النوم">
+                <div class="gallery-overlay">
+                    <span>غرفة النوم</span>
+                    <span>🔍</span>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(7)">
+                <img src="images02/WhatsApp%20Irgmage%202026-07-05%20at%202.39.35%20PM.jpeg"
+                    alt="الجلسة الخارجية المريحة">
+                <div class="gallery-overlay">
+                    <span>الجلسة الخارجية المريحة</span>
+                    <span>🔍</span>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(8)">
+                <img src="images02/WhatsfApp%20Image%202026-07-05%20at%202.39.34%20PM.jpeg"
+                    alt="إطلالة على جبال طويق والخيول">
+                <div class="gallery-overlay">
+                    <span>إطلالة على جبال طويق والخيول</span>
+                    <span>🔍</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- تذييل الصفحة -->
+        <footer>
+            <p>جميع الحقوق محفوظة © 2026 <strong>إسطبل وشاليهات الرسن</strong></p>
+        </footer>
+    </div>
+
+    <!-- نافذة المودال لعرض الصور بجودة كاملة Lightbox -->
+    <div id="lightboxModal" class="lightbox-modal" onclick="closeLightboxOnBg(event)">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+            <button class="lightbox-arrow lightbox-prev" onclick="prevImage()">›</button>
+            <img id="lightboxImg" class="lightbox-img" src="" alt="صورة الشاليه">
+            <div id="lightboxCaption" class="lightbox-caption"></div>
+            <button class="lightbox-arrow lightbox-next" onclick="nextImage()">‹</button>
+        </div>
+    </div>
+
+    <script>
+        // مصفوفة تحتوي على تفاصيل الصور والتعليقات المناسبة لها
+        const imagesData = [
+            { src: 'images02/WhatsApp Image 2026-07-05 at 2.39.33 PM.jpeg', caption: 'صورة الشاليه ومرافقه الخارجية والمسبح' },
+            { src: 'images02/WhatsApp Image 2026-07-05 at 2.39.34 PM.jpeg', caption: 'المجلس الداخلي الراقي والفرش' },
+            { src: 'images02/WhatsApp Image 2026-07-05 at g2.39.34 PM.jpeg', caption: 'إطلالة على المسبح الخارجي والمنطقة المحيطة' },
+            { src: 'images02/WhatsApp Image 2026-07-05 atgh 2.39.36 PM.jpeg', caption: 'تفاصيل المسبح ومنطقة الاستجمام' },
+            { src: 'images02/WhatsApp Image 2026-07dd-05 at 2.39.36 PM.jpeg', caption: 'المطبخ وتجهيزاته الكاملة' },
+            { src: 'images02/WhatsApp Image 2026g-07-05 at 2.39.36 PM.jpeg', caption: 'دورة المياه والخدمات النظيفة' },
+            { src: 'images02/WhatsApp Imagfge 2026-07-05 at 2.39.35 PM.jpeg', caption: 'غرفة النوم الرئيسية الدافئة' },
+            { src: 'images02/WhatsApp Irgmage 2026-07-05 at 2.39.35 PM.jpeg', caption: 'الجلسة الخارجية المريحة' },
+            { src: 'images02/WhatsfApp Image 2026-07-05 at 2.39.34 PM.jpeg', caption: 'إطلالة رائعة على جبال طويق والخيول' }
+        ];
+
+        let currentImageIndex = 0;
+        const modal = document.getElementById('lightboxModal');
+        const modalImg = document.getElementById('lightboxImg');
+        const modalCaption = document.getElementById('lightboxCaption');
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxContent();
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // منع سكرول الصفحة خلف المودال
+        }
+
+        function closeLightbox() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto'; // استعادة السكرول
+        }
+
+        function closeLightboxOnBg(event) {
+            // إغلاق المودال فقط إذا تم الضغط على الخلفية السوداء وليس على الصورة أو الأزرار
+            if (event.target === modal || event.target.classList.contains('lightbox-content')) {
+                closeLightbox();
+            }
+        }
+
+        function updateLightboxContent() {
+            const data = imagesData[currentImageIndex];
+            modalImg.src = data.src;
+            modalCaption.innerText = data.caption;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % imagesData.length;
+            updateLightboxContent();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + imagesData.length) % imagesData.length;
+            updateLightboxContent();
+        }
+
+        // دعم التحكم عن طريق لوحة المفاتيح
+        document.addEventListener('keydown', function (event) {
+            if (!modal.classList.contains('active')) return;
+
+            if (event.key === 'Escape') {
+                closeLightbox();
+            } else if (event.key === 'ArrowRight') {
+                // في وضع RTL (العربي) السهم الأيمن يذهب للصورة السابقة
+                prevImage();
+            } else if (event.key === 'ArrowLeft') {
+                // السهم الأيسر يذهب للصورة التالية
+                nextImage();
+            }
+        });
+    </script>
+</body>
+
+</html>
