@@ -1,35 +1,27 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="ar">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شاليهات وإسطبل الرسن - شاليه 1</title>
+    <title data-translate="title">شاليهات وإسطبل الرسن - شاليه 1</title>
     <!-- Meta tags for SEO and responsiveness -->
-    <meta name="description"
-        content="استمتع بتجربة إقامة فاخرة وهادئة في شاليه مستقل ومنعزل تماماً داخل إسطبل خيول في ديراب. جولات خيل مجانية وإطلالة ساحرة على جبال طويق.">
-
+    <meta name="description" content="استمتع بتجربة إقامة فاخرة وهادئة في شاليه مستقل ومنعزل تماماً داخل إسطبل خيول في ديراب. جولات خيل مجانية وإطلالة ساحرة على جبال طويق.">
+    
     <!-- Google Fonts - Tajawal -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --primary: #2c3e2b;
-            /* أخضر داكن ملكي */
+            --primary: #2c3e2b;       /* أخضر داكن ملكي */
             --primary-light: #3d543c;
-            --accent: #c5a880;
-            /* ذهبي راقي */
+            --accent: #c5a880;        /* ذهبي راقي */
             --accent-hover: #b3956d;
-            --bg-page: #f7f5f0;
-            /* بيج دافئ مريح للعين */
+            --bg-page: #f7f5f0;       /* بيج دافئ مريح للعين */
             --card-bg: #ffffff;
-            --text-main: #3d342e;
-            /* بني دافئ داكن */
-            --text-muted: #73675f;
-            /* بني دافئ متوسط */
+            --text-main: #3d342e;     /* بني دافئ داكن */
+            --text-muted: #73675f;    /* بني دافئ متوسط */
             --white: #ffffff;
             --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.03);
             --shadow-md: 0 10px 30px rgba(44, 62, 43, 0.06);
@@ -40,9 +32,7 @@
         }
 
         /* تنسيقات التصميم العام */
-        *,
-        *::before,
-        *::after {
+        *, *::before, *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -56,6 +46,7 @@
             padding: 0;
             margin: 0;
             overflow-x: hidden;
+            text-align: start;
         }
 
         /* الحاوية الرئيسية */
@@ -63,6 +54,44 @@
             max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
+        }
+
+        /* زر تغيير اللغة العائم */
+        .lang-switch-btn {
+            position: fixed;
+            top: 20px;
+            z-index: 999;
+            background: rgba(44, 62, 43, 0.9);
+            color: var(--accent);
+            border: 2px solid var(--accent);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lang-switch-btn:hover {
+            background: var(--primary);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        html[dir="rtl"] .lang-switch-btn {
+            left: 20px;
+            right: auto;
+        }
+
+        html[dir="ltr"] .lang-switch-btn {
+            right: 20px;
+            left: auto;
         }
 
         /* الهيدر والبانر الرئيسي */
@@ -107,7 +136,7 @@
         /* كرت المقدمة */
         .intro-card {
             background-color: var(--card-bg);
-            border-right: 5px solid var(--primary);
+            border-inline-start: 5px solid var(--primary);
             border-radius: var(--radius-md);
             padding: 25px;
             margin-bottom: 35px;
@@ -307,7 +336,7 @@
 
         .warning-card li {
             position: relative;
-            padding-right: 25px;
+            padding-inline-start: 25px;
             margin-bottom: 12px;
             font-size: 1.05rem;
             color: var(--text-main);
@@ -321,7 +350,7 @@
         .warning-card li::before {
             content: "•";
             position: absolute;
-            right: 0;
+            inset-inline-start: 0;
             color: var(--accent);
             font-size: 1.8rem;
             line-height: 1;
@@ -498,21 +527,113 @@
                 height: 40px;
                 font-size: 1.8rem;
             }
-
             .lightbox-prev {
                 right: -10px;
                 background: rgba(0, 0, 0, 0.5);
             }
-
             .lightbox-next {
                 left: -10px;
                 background: rgba(0, 0, 0, 0.5);
             }
-
             .lightbox-close {
                 left: 10px;
                 top: -50px;
             }
+        }
+
+        /* قسم التواصل والاستفسار */
+        .contact-card {
+            background-color: var(--card-bg);
+            border-radius: var(--radius-md);
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(44, 62, 43, 0.05);
+            margin-bottom: 35px;
+        }
+
+        .contact-desc {
+            font-size: 1.15rem;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: #ffffff;
+            border: 1px solid #25D366;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #20ba59;
+            border-color: #20ba59;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .phone-btn {
+            background-color: var(--primary);
+            color: #ffffff;
+            border: 1px solid var(--primary);
+        }
+
+        .phone-btn:hover {
+            background-color: var(--primary-light);
+            border-color: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(44, 62, 43, 0.2);
+        }
+
+        .whatsapp-icon,
+        .phone-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* حاوية الخريطة المتجاوبة */
+        .map-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            /* نسبة العرض إلى الارتفاع 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(44, 62, 43, 0.05);
+            margin-bottom: 35px;
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
 
         /* تذييل الصفحة */
@@ -534,206 +655,232 @@
             header {
                 padding: 35px 15px;
             }
-
             header h1 {
                 font-size: 1.8rem;
             }
-
             .section-title {
                 font-size: 1.3rem;
             }
-
             .info-table td {
                 padding: 12px 15px;
             }
-
             .info-label {
                 width: 40%;
             }
         }
+
+        /* إخفاء زر تبديل اللغة عند الطباعة أو حفظ الصفحة كـ PDF */
+        @media print {
+            .lang-switch-btn {
+                display: none !important;
+            }
+        }
     </style>
 </head>
-
 <body>
+
+    <!-- زر تبديل اللغة العائم -->
+    <button class="lang-switch-btn" onclick="toggleLanguage()" id="langBtn" aria-label="Toggle Language">
+        🌐 <span>English</span>
+    </button>
 
     <div class="container">
         <!-- الهيدر والبانر الرئيسي -->
         <header>
-            <h1>شاليهات وإسطبل الرسن</h1>
-            <p>شاليه 1 • ديراب</p>
+            <h1 data-translate="title">شاليهات وإسطبل الرسن</h1>
+            <p data-translate="subtitle">شاليه 1 • ديراب</p>
         </header>
 
         <!-- كرت المقدمة -->
         <section class="intro-card">
-            <p>هل تبحث عن عزلة ممتعة وإستجمام وتجربة مغايرة عن المألوف؟ نرحب بكم في شاليهنا الفريد الواقع في قلب منطقة
-                ديراب، حيث تلتقي إطلالة جبال طويق الساحرة بروح الأصالة، في شاليه مستقل ومنعزل تماماً داخل إسطبل خيول
-                لضمان خصوصيتكم الكاملة.</p>
+            <p data-translate="introText">هل تبحث عن عزلة ممتعة وإستجمام وتجربة مغايرة عن المألوف؟ نرحب بكم في شاليهنا الفريد الواقع في قلب منطقة ديراب، حيث تلتقي إطلالة جبال طويق الساحرة بروح الأصالة، في شاليه مستقل ومنعزل تماماً داخل إسطبل خيول لضمان خصوصيتكم الكاملة.</p>
         </section>
 
         <!-- الميزات والتجارب الحصرية -->
-        <h3 class="section-title">✨ مميزات وتجارب حصرية لضيوفنا</h3>
+        <h3 class="section-title" data-translate="secExperiences">✨ مميزات وتجارب حصرية لضيوفنا</h3>
         <div class="grid-layout">
             <div class="feature-card">
                 <div>
                     <div class="feature-header">
                         <div class="feature-icon-wrapper">📸</div>
-                        <h4>جولة تصوير مجانية</h4>
+                        <h4 data-translate="tourTitle">جولة تصوير مجانية</h4>
                     </div>
-                    <p>استمتع بجولة لمدة 15 دقيقة (بتنسيق مسبق مع الإدارة) لمشاهدة وتصوير الخيول العربية الأصيلة داخل
-                        الإسطبل والتقاط أجمل اللقطات التذكارية.</p>
+                    <p data-translate="tourDesc">استمتع بجولة لمدة 15 دقيقة (بتنسيق مسبق مع الإدارة) لمشاهدة وتصوير الخيول العربية الأصيلة داخل الإسطبل والتقاط أجمل اللقطات التذكارية.</p>
                 </div>
-                <span class="price-badge">مجانًا للضيوف</span>
+                <span class="price-badge" data-translate="tourBadge">مجانًا للضيوف</span>
             </div>
-
+            
             <div class="feature-card">
                 <div>
                     <div class="feature-header">
                         <div class="feature-icon-wrapper">🏇</div>
-                        <h4>تجربة ركوب الخيل</h4>
+                        <h4 data-translate="rideTitle">تجربة ركوب الخيل</h4>
                     </div>
-                    <p>عش متعة ركوب الخيل بخصوصية تامة تناسب العوائل والأفراد في ساحة الإسطبل (لمدة 45 دقيقة) برسوم
-                        إضافية رمزية برفقة مدرب مختص.</p>
+                    <p data-translate="rideDesc">عش متعة ركوب الخيل بخصوصية تامة تناسب العوائل والأفراد في ساحة الإسطبل (لمدة 45 دقيقة) برسوم إضافية رمزية برفقة مدرب مختص.</p>
                 </div>
-                <span class="price-badge">50 ريال فقط</span>
+                <span class="price-badge" data-translate="rideBadge">50 ريال فقط</span>
             </div>
         </div>
 
         <!-- مرافق الشاليه ومواصفاته -->
-        <h3 class="section-title">🏡 مرافق الشاليه ومواصفاته</h3>
+        <h3 class="section-title" data-translate="secAmenities">🏡 مرافق الشاليه ومواصفاته</h3>
         <div class="amenities-grid">
             <div class="amenity-card">
                 <div class="amenity-icon">🏊</div>
-                <div class="amenity-text">مسبح منعش</div>
+                <div class="amenity-text" data-translate="amenityPool">مسبح منعش</div>
             </div>
             <div class="amenity-card">
                 <div class="amenity-icon">🛌</div>
-                <div class="amenity-text">غرفة نوم مريحة (لشخصين)</div>
+                <div class="amenity-text" data-translate="amenityBedroom">غرفة نوم مريحة (لشخصين)</div>
             </div>
             <div class="amenity-card">
                 <div class="amenity-icon">🛋️</div>
-                <div class="amenity-text">مجلس داخلي بجلسة أرضية، فسيح للجمعات</div>
+                <div class="amenity-text" data-translate="amenityLiving">مجلس داخلي بجلسة أرضية، فسيح للجمعات</div>
             </div>
             <div class="amenity-card">
                 <div class="amenity-icon">🌳</div>
-                <div class="amenity-text">جلسات خارجية بإطلالة جبلية</div>
+                <div class="amenity-text" data-translate="amenityOutdoor">جلسات خارجية بإطلالة جبلية</div>
             </div>
             <div class="amenity-card">
                 <div class="amenity-icon">🍳</div>
-                <div class="amenity-text">مطبخ متكامل مجهز بالكامل</div>
+                <div class="amenity-text" data-translate="amenityKitchen">مطبخ متكامل مجهز بالكامل</div>
             </div>
             <div class="amenity-card">
                 <div class="amenity-icon">🚽</div>
-                <div class="amenity-text">دورة مياه (كرسي أفرنجي)</div>
+                <div class="amenity-text" data-translate="amenityBathroom">دورة مياه (كرسي أفرنجي)</div>
             </div>
         </div>
 
         <!-- تفاصيل إضافية -->
-        <h3 class="section-title">📊 معلومات وتفاصيل الشاليه</h3>
+        <h3 class="section-title" data-translate="secInfo">📊 معلومات وتفاصيل الشاليه</h3>
         <table class="info-table">
             <tr>
-                <td class="info-label">👥 السعة الاستيعابية</td>
-                <td class="info-val">الشاليه مجهز ومناسب لاستقبال من 7 إلى 10 أشخاص براحة تامة.</td>
+                <td class="info-label" data-translate="infoCapacityLabel">👥 السعة الاستيعابية</td>
+                <td class="info-val" data-translate="infoCapacityVal">الشاليه مجهز ومناسب لاستقبال من 7 إلى 10 أشخاص براحة تامة.</td>
             </tr>
             <tr>
-                <td class="info-label">📐 المساحة الإجمالية</td>
-                <td class="info-val">120 متر مربع.</td>
+                <td class="info-label" data-translate="infoAreaLabel">📐 المساحة الإجمالية</td>
+                <td class="info-val" data-translate="infoAreaVal">120 متر مربع.</td>
             </tr>
             <tr>
-                <td class="info-label">📍 الموقع (اللوكيشن)</td>
-                <td class="info-val">ديراب، خلف نادي ديراب للقولف .</td>
+                <td class="info-label" data-translate="infoPoolLabel">🏊 أبعاد وعمق المسبح</td>
+                <td class="info-val" data-translate="infoPoolVal">5*3 متر وعمقه متدرج من 1 متر إلى 2 متر ويناسب الأطفال والكبار</td>
+            </tr>
+            <tr>
+                <td class="info-label" data-translate="infoLocationLabel">📍 الموقع (اللوكيشن)</td>
+                <td class="info-val" data-translate="infoLocationVal">ديراب، خلف نادي ديراب للقولف .</td>
             </tr>
         </table>
 
+        <!-- موقع الشاليه (اللوكيشن) -->
+        <h3 class="section-title" data-translate="secMap">📍 موقع الشاليه (اللوكيشن)</h3>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.370265784725!2d46.45341491115181!3d24.402360463344163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f3f306f820001%3A0x435d0a22327db6ed!2z2KfYs9i32KjZhCDZiNi02KfZhNmK2Ycg2YXYsdio2Lcg2KfZhNix2LPZhiDZhNmE2K7ZitmE!5e1!3m2!1sen!2ssa!4v1783416200768!5m2!1sen!2ssa" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+
         <!-- أشياء يجب معرفتها قبل الحجز -->
         <div class="warning-card">
-            <h4>📌 أشياء يجب معرفتها قبل الحجز:</h4>
+            <h4 data-translate="warningTitle">📌 أشياء يجب معرفتها قبل الحجز:</h4>
             <ul>
-                <li>لا يوجد سماعات داخل الشاليه، ولكن نوفر شاشات ذكية متكاملة في الغرف كبديل مميز لتشغيل ما تفضلونه.
-                </li>
-                <li>تطبيقات التوصيل والخدمات لا تصل للموقع في الغالب نظرًا لطبيعة المنطقة الريفية، لذا ننصح بشدة بجلب
-                    كافة احتياجاتكم وأغراضكم معكم للاستمتاع بتجربة الشواء والطبخ المتكاملة.</li>
-                <li>الجزء الأخير من الطريق المؤدي للشاليه عبارة عن ردمية (طريق ترابي غير مسفلت) بطول بسيط، ولكنه ممهد
-                    ومستوٍ تماماً وتستطيع كافة أنواع السيارات العبور منه بسهولة بما فيها السيارات الصغيرة المنخفضة.</li>
-                <li>الموقع الجغرافي يقع في منطقة هادئة خلف نادي ديراب للقولف.</li>
-                <li>يتم دفع تأمين مسترد عند تسجيل الخروج بقيمة 300 ريال سعودي، وذلك بعد التأكد من سلامة كافة مرافق
-                    الشاليه ومحتوياته.</li>
+                <li data-translate="warningItem1">لا يوجد سماعات داخل الشاليه، ولكن نوفر شاشات ذكية متكاملة في الغرف كبديل مميز لتشغيل ما تفضلونه.</li>
+                <li data-translate="warningItem2">تطبيقات التوصيل والخدمات لا تصل للموقع في الغالب نظرًا لطبيعة المنطقة الريفية، لذا ننصح بشدة بجلب كافة احتياجاتكم وأغراضكم معكم للاستمتاع بتجربة الشواء والطبخ المتكاملة.</li>
+                <li data-translate="warningItem3">الجزء الأخير من الطريق المؤدي للشاليه عبارة عن ردمية (طريق ترابي غير مسفلت) بطول بسيط، ولكنه ممهد ومستوٍ تماماً وتستطيع كافة أنواع السيارات العبور منه بسهولة بما فيها السيارات الصغيرة المنخفضة.</li>
+                <li data-translate="warningItem4">الموقع الجغرافي يقع في منطقة هادئة خلف نادي ديراب للقولف.</li>
+                <li data-translate="warningItem5">يتم دفع تأمين مسترد عند تسجيل الخروج بقيمة 300 ريال سعودي، وذلك بعد التأكد من سلامة كافة مرافق الشاليه ومحتوياته.</li>
             </ul>
         </div>
 
         <!-- ألبوم الصور -->
-        <h3 class="section-title">📸 ألبوم صور الشاليه</h3>
+        <h3 class="section-title" data-translate="secGallery">📸 ألبوم صور الشاليه</h3>
         <div class="gallery-grid">
             <div class="gallery-item" onclick="openLightbox(0)">
                 <img src="images/7b874aa1-b652-4daa-9a05-b845f0c4c482.jpg" alt="صورة الشاليه ومرافقه">
                 <div class="gallery-overlay">
-                    <span>صورة الشاليه ومرافقه</span>
+                    <span data-translate="imgTitle0">صورة الشاليه ومرافقه</span>
                     <span>🔍</span>
                 </div>
             </div>
             <div class="gallery-item" onclick="openLightbox(1)">
-                <img src="images/WhatsApp%20Image%202026-07-05%20at%202.23.25%20PM.jpeg" alt="المجلس والفرش الداخلي">
+                <img src="images/WhatsApp%20Image%202026-07-05%20at%202.23.25%20PM.jpeg" alt="المجلس">
                 <div class="gallery-overlay">
-                    <span>المجلس والفرش الداخلي</span>
+                    <span data-translate="imgTitle1">المجلس</span>
                     <span>🔍</span>
                 </div>
             </div>
             <div class="gallery-item" onclick="openLightbox(2)">
-                <img src="images/WhatsApp%20Image%202026-07-05%20at%202.23.26%20PM.jpeg"
-                    alt="إطلالة على المسبح والجلسة الخارجية">
+                <img src="images/WhatsApp%20Image%202026-07-05%20at%202.23.26%20PM.jpeg" alt="إطلالة على المسبح والجلسة الخارجية">
                 <div class="gallery-overlay">
-                    <span>إطلالة على المسبح والجلسة الخارجية</span>
+                    <span data-translate="imgTitle2">إطلالة على المسبح والجلسة الخارجية</span>
                     <span>🔍</span>
                 </div>
             </div>
             <div class="gallery-item" onclick="openLightbox(3)">
                 <img src="images/WhatsApp%20Imaggge%202026-07-05%20at%202.23.26%20PM.jpeg" alt="تفاصيل المسبح">
                 <div class="gallery-overlay">
-                    <span>تفاصيل المسبح</span>
+                    <span data-translate="imgTitle3">تفاصيل المسبح</span>
                     <span>🔍</span>
                 </div>
             </div>
             <div class="gallery-item" onclick="openLightbox(4)">
-                <img src="images/WhatsApfgp%20Image%202026-07-05%20at%202.23.26%20PM.jpeg" alt="المطبخ وتجهيزاته">
+                <img src="images/WhatsApfgp%20Image%202026-07-05%20at%202.23.26%20PM.jpeg" alt="إطلالة جبلية">
                 <div class="gallery-overlay">
-                    <span>المطبخ وتجهيزاته</span>
+                    <span data-translate="imgTitle4">إطلالة جبلية</span>
                     <span>🔍</span>
                 </div>
             </div>
             <div class="gallery-item" onclick="openLightbox(5)">
-                <img src="images/WhatsApp%20Image%202026-07-05%20at%20ff2.23.26%20PM.jpeg" alt="دورة المياه والخدمات">
+                <img src="images/WhatsApp%20Image%202026-07-05%20at%20ff2.23.26%20PM.jpeg" alt="غرفة النوم">
                 <div class="gallery-overlay">
-                    <span>دورة المياه والخدمات</span>
+                    <span data-translate="imgTitle5">غرفة النوم</span>
                     <span>🔍</span>
                 </div>
             </div>
             <div class="gallery-item" onclick="openLightbox(6)">
-                <img src="images/WhatsApp%20Imafge%202026-07-05%20at%202.23.27%20PM.jpeg" alt="غرفة النوم">
+                <img src="images/WhatsApp%20Imafge%202026-07-05%20at%202.23.27%20PM.jpeg" alt="المطبخ">
                 <div class="gallery-overlay">
-                    <span>غرفة النوم</span>
+                    <span data-translate="imgTitle6">المطبخ</span>
                     <span>🔍</span>
                 </div>
             </div>
             <div class="gallery-item" onclick="openLightbox(7)">
-                <img src="images/WhatsApp%20Image%202026-07-05%20at%202.2rter3.27%20PM.jpeg"
-                    alt="الجلسة الخارجية المضاءة ليلاً">
+                <img src="images/WhatsApp%20Image%202026-07-05%20at%202.2rter3.27%20PM.jpeg" alt="الجلسة الخارجية المضاءة ليلاً">
                 <div class="gallery-overlay">
-                    <span>الجلسة الخارجية المضاءة ليلاً</span>
+                    <span data-translate="imgTitle7">الجلسة الخارجية المضاءة ليلاً</span>
                     <span>🔍</span>
                 </div>
             </div>
             <div class="gallery-item" onclick="openLightbox(8)">
-                <img src="images/WhatsApp%20Image%202026-07-05%20at%202.23.28%20PM.jpeg"
-                    alt="إطلالة على جبال طويق والخيول">
+                <img src="images/WhatsApp%20Image%202026-07-05%20at%202.23.28%20PM.jpeg" alt="المسبح">
                 <div class="gallery-overlay">
-                    <span>إطلالة على جبال طويق والخيول</span>
+                    <span data-translate="imgTitle8">المسبح</span>
                     <span>🔍</span>
                 </div>
             </div>
         </div>
 
+        <!-- قسم التواصل والاستفسار -->
+        <h3 class="section-title" data-translate="secBooking">📞 للحجز والاستفسار</h3>
+        <div class="contact-card">
+            <p class="contact-desc" data-translate="bookingDesc">يسعدنا تواصلكم للإجابة على جميع استفساراتكم وحجز الشاليه:</p>
+            <div class="contact-buttons">
+                <a href="https://wa.me/966531090857" target="_blank" class="contact-btn whatsapp-btn">
+                    <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+                    </svg>
+                    <span data-translate="btnWhatsapp">تواصل معنا عبر الواتساب</span>
+                </a>
+                <a href="tel:0531090857" class="contact-btn phone-btn">
+                    <svg class="phone-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path fill="currentColor" d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/>
+                    </svg>
+                    <span data-translate="btnPhone">اتصال هاتفي: 0531090857</span>
+                </a>
+            </div>
+        </div>
+
         <!-- تذييل الصفحة -->
         <footer>
-            <p>جميع الحقوق محفوظة © 2026 <strong>إسطبل وشاليهات الرسن</strong></p>
+            <p data-translate="footerText">جميع الحقوق محفوظة © 2026 شاليهات وإسطبل الرسن</p>
         </footer>
     </div>
 
@@ -749,24 +896,175 @@
     </div>
 
     <script>
-        // مصفوفة تحتوي على تفاصيل الصور والتعليقات المناسبة لها
+        // قاموس الترجمات الكامل لصفحة شاليه 1
+        const translations = {
+            ar: {
+                langBtn: "English",
+                title: "شاليهات وإسطبل الرسن - شاليه 1",
+                subtitle: "شاليه 1 • ديراب",
+                introText: "هل تبحث عن عزلة ممتعة وإستجمام وتجربة مغايرة عن المألوف؟ نرحب بكم في شاليهنا الفريد الواقع في قلب منطقة ديراب، حيث تلتقي إطلالة جبال طويق الساحرة بروح الأصالة، في شاليه مستقل ومنعزل تماماً داخل إسطبل خيول لضمان خصوصيتكم الكاملة.",
+                secExperiences: "✨ مميزات وتجارب حصرية لضيوفنا",
+                tourTitle: "جولة تصوير مجانية",
+                tourDesc: "استمتع بجولة لمدة 15 دقيقة (بتنسيق مسبق مع الإدارة) لمشاهدة وتصوير الخيول العربية الأصيلة داخل الإسطبل والتقاط أجمل اللقطات التذكارية.",
+                tourBadge: "مجانًا للضيوف",
+                rideTitle: "تجربة ركوب الخيل",
+                rideDesc: "عش متعة ركوب الخيل بخصوصية تامة تناسب العوائل والأفراد في ساحة الإسطبل (لمدة 45 دقيقة) برسوم إضافية رمزية برفقة مدرب مختص.",
+                rideBadge: "50 ريال فقط",
+                secAmenities: "🏡 مرافق الشاليه ومواصفاته",
+                amenityPool: "مسبح منعش",
+                amenityBedroom: "غرفة نوم مريحة (لشخصين)",
+                amenityLiving: "مجلس داخلي بجلسة أرضية، فسيح للجمعات",
+                amenityOutdoor: "جلسات خارجية بإطلالة جبلية",
+                amenityKitchen: "مطبخ متكامل مجهز بالكامل",
+                amenityBathroom: "دورة مياه (كرسي أفرنجي)",
+                secInfo: "📊 معلومات وتفاصيل الشاليه",
+                infoCapacityLabel: "👥 السعة الاستيعابية",
+                infoCapacityVal: "الشاليه مجهز ومناسب لاستقبال من 7 إلى 10 أشخاص براحة تامة.",
+                infoAreaLabel: "📐 المساحة الإجمالية",
+                infoAreaVal: "120 متر مربع.",
+                infoPoolLabel: "🏊 أبعاد وعمق المسبح",
+                infoPoolVal: "5*3 متر وعمقه متدرج من 1 متر إلى 2 متر ويناسب الأطفال والكبار",
+                infoLocationLabel: "📍 الموقع (اللوكيشن)",
+                infoLocationVal: "ديراب، خلف نادي ديراب للقولف .",
+                secMap: "📍 موقع الشاليه (اللوكيشن)",
+                warningTitle: "📌 أشياء يجب معرفتها قبل الحجز:",
+                warningItem1: "لا يوجد سماعات داخل الشاليه، ولكن نوفر شاشات ذكية متكاملة في الغرف كبديل مميز لتشغيل ما تفضلونه.",
+                warningItem2: "تطبيقات التوصيل والخدمات لا تصل للموقع في الغالب نظرًا لطبيعة المنطقة الريفية، لذا ننصح بشدة بجلب كافة احتياجاتكم وأغراضكم معكم للاستمتاع بتجربة الشواء والطبخ المتكاملة.",
+                warningItem3: "الجزء الأخير من الطريق المؤدي للشاليه عبارة عن ردمية (طريق ترابي غير مسفلت) بطول بسيط، ولكنه ممهد ومستوٍ تماماً وتستطيع كافة أنواع السيارات العبور منه بسهولة بما فيها السيارات الصغيرة المنخفضة.",
+                warningItem4: "الموقع الجغرافي يقع في منطقة هادئة خلف نادي ديراب للقولف.",
+                warningItem5: "يتم دفع تأمين مسترد عند تسجيل الخروج بقيمة 300 ريال سعودي، وذلك بعد التأكد من سلامة كافة مرافق الشاليه ومحتوياته.",
+                secGallery: "📸 ألبوم صور الشاليه",
+                imgTitle0: "صورة الشاليه ومرافقه",
+                imgTitle1: "المجلس",
+                imgTitle2: "إطلالة على المسبح والجلسة الخارجية",
+                imgTitle3: "تفاصيل المسبح",
+                imgTitle4: "إطلالة جبلية",
+                imgTitle5: "غرفة النوم",
+                imgTitle6: "المطبخ",
+                imgTitle7: "الجلسة الخارجية المضاءة ليلاً",
+                imgTitle8: "المسبح",
+                secBooking: "📞 للحجز والاستفسار",
+                bookingDesc: "يسعدنا تواصلكم للإجابة على جميع استفساراتكم وحجز الشاليه:",
+                btnWhatsapp: "تواصل معنا عبر الواتساب",
+                btnPhone: "اتصال هاتفي: 0531090857",
+                footerText: "جميع الحقوق محفوظة © 2026 شاليهات وإسطبل الرسن"
+            },
+            en: {
+                langBtn: "العربية",
+                title: "Al-Rasan Chalets & Stable - Chalet 1",
+                subtitle: "Chalet 1 • Dirab",
+                introText: "Are you looking for a pleasant escape, relaxation, and a unique experience? We welcome you to our unique chalet located in the heart of Dirab, where the magical view of the Tuwaiq Mountains meets the spirit of authenticity, in a completely independent and private chalet inside a horse stable to ensure your absolute privacy.",
+                secExperiences: "✨ Exclusive Guest Features & Experiences",
+                tourTitle: "Free Photography Tour",
+                tourDesc: "Enjoy a 15-minute tour (pre-coordinated with management) to watch and photograph the purebred Arabian horses inside the stable and capture the most beautiful memories.",
+                tourBadge: "Free for Guests",
+                rideTitle: "Horse Riding Experience",
+                rideDesc: "Experience the thrill of horse riding in complete privacy suitable for families and individuals in the stable arena (for 45 minutes) with a symbolic fee accompanied by a professional trainer.",
+                rideBadge: "Only 50 SAR",
+                secAmenities: "🏡 Chalet Facilities & Specifications",
+                amenityPool: "Refreshing Pool",
+                amenityBedroom: "Cozy Bedroom (for 2)",
+                amenityLiving: "Spacious indoor living area with floor seating",
+                amenityOutdoor: "Outdoor seating with mountain view",
+                amenityKitchen: "Fully equipped kitchen",
+                amenityBathroom: "Bathroom (Western Toilet)",
+                secInfo: "📊 Chalet Information & Details",
+                infoCapacityLabel: "👥 Capacity",
+                infoCapacityVal: "The chalet is equipped and suitable to comfortably accommodate 7 to 10 people.",
+                infoAreaLabel: "📐 Total Area",
+                infoAreaVal: "120 square meters.",
+                infoPoolLabel: "🏊 Pool Dimensions",
+                infoPoolVal: "5*3 meters, depth graduated from 1 to 2 meters, suitable for kids and adults.",
+                infoLocationLabel: "📍 Location",
+                infoLocationVal: "Dirab, right behind Dirab Golf Club.",
+                secMap: "📍 Chalet Location (Map)",
+                warningTitle: "📌 Things to know before booking:",
+                warningItem1: "There are no speakers inside the chalet, but we provide integrated smart screens in the rooms as a great alternative to play what you prefer.",
+                warningItem2: "Delivery apps and services usually do not reach the location due to the rural nature of the area, so we strongly advise bringing all your needs and items with you to enjoy a complete barbecue and cooking experience.",
+                warningItem3: "The last part of the road leading to the chalet is a short unpaved dirt road, but it is completely leveled and any type of car can easily cross it, including small low cars.",
+                warningItem4: "The geographical location is in a quiet area behind the Dirab Golf Club.",
+                warningItem5: "A refundable deposit of 300 SAR is paid upon check-out, after verifying the safety of all chalet facilities and contents.",
+                secGallery: "📸 Chalet Photo Gallery",
+                imgTitle0: "Chalet exterior and facilities",
+                imgTitle1: "Living Room",
+                imgTitle2: "Pool & Outdoor Seating View",
+                imgTitle3: "Pool Details",
+                imgTitle4: "Mountain View",
+                imgTitle5: "Bedroom",
+                imgTitle6: "Kitchen",
+                imgTitle7: "Lit Outdoor Seating at Night",
+                imgTitle8: "Swimming Pool",
+                secBooking: "📞 Booking & Inquiry",
+                bookingDesc: "We are happy to contact you to answer all your inquiries and book the chalet:",
+                btnWhatsapp: "Contact us via WhatsApp",
+                btnPhone: "Call Us: 0531090857",
+                footerText: "All rights reserved © 2026 Al-Rasan Chalets & Stable"
+            }
+        };
+
+        // مصفوفة تحتوي على تفاصيل الصور والتعليقات الافتراضية
         const imagesData = [
-            { src: 'images/7b874aa1-b652-4daa-9a05-b845f0c4c482.jpg', caption: 'صورة الشاليه ومرافقه الخارجي والمسبح' },
-            { src: 'images/WhatsApp Image 2026-07-05 at 2.23.25 PM.jpeg', caption: 'المجلس الداخلي الفسيح والفرش' },
-            { src: 'images/WhatsApp Image 2026-07-05 at 2.23.26 PM.jpeg', caption: 'إطلالة على المسبح والجلسة الخارجية المريحة' },
-            { src: 'images/WhatsApp Imaggge 2026-07-05 at 2.23.26 PM.jpeg', caption: 'تفاصيل المسبح والمنطقة المحيطة' },
-            { src: 'images/WhatsApfgp Image 2026-07-05 at 2.23.26 PM.jpeg', caption: 'المطبخ وتجهيزاته الكاملة' },
-            { src: 'images/WhatsApp Image 2026-07-05 at ff2.23.26 PM.jpeg', caption: 'دورة المياه والخدمات النظيفة' },
-            { src: 'images/WhatsApp Imafge 2026-07-05 at 2.23.27 PM.jpeg', caption: 'غرفة النوم الرئيسية الدافئة' },
-            { src: 'images/WhatsApp Image 2026-07-05 at 2.2rter3.27 PM.jpeg', caption: 'الجلسة الخارجية المضاءة بجمالها ليلاً' },
-            { src: 'images/WhatsApp Image 2026-07-05 at 2.23.28 PM.jpeg', caption: 'إطلالة رائعة على جبال طويق والخيول' }
+            { src: 'images/7b874aa1-b652-4daa-9a05-b845f0c4c482.jpg', captionKey: 'imgTitle0' },
+            { src: 'images/WhatsApp Image 2026-07-05 at 2.23.25 PM.jpeg', captionKey: 'imgTitle1' },
+            { src: 'images/WhatsApp Image 2026-07-05 at 2.23.26 PM.jpeg', captionKey: 'imgTitle2' },
+            { src: 'images/WhatsApp Imaggge 2026-07-05 at 2.23.26 PM.jpeg', captionKey: 'imgTitle3' },
+            { src: 'images/WhatsApfgp Image 2026-07-05 at 2.23.26 PM.jpeg', captionKey: 'imgTitle4' },
+            { src: 'images/WhatsApp Image 2026-07-05 at ff2.23.26 PM.jpeg', captionKey: 'imgTitle5' },
+            { src: 'images/WhatsApp Imafge 2026-07-05 at 2.23.27 PM.jpeg', captionKey: 'imgTitle6' },
+            { src: 'images/WhatsApp Image 2026-07-05 at 2.2rter3.27 PM.jpeg', captionKey: 'imgTitle7' },
+            { src: 'images/WhatsApp Image 2026-07-05 at 2.23.28 PM.jpeg', captionKey: 'imgTitle8' }
         ];
 
+        let currentLang = 'ar';
         let currentImageIndex = 0;
         const modal = document.getElementById('lightboxModal');
         const modalImg = document.getElementById('lightboxImg');
         const modalCaption = document.getElementById('lightboxCaption');
 
+        // دالة تغيير اللغة
+        function toggleLanguage() {
+            currentLang = (currentLang === 'ar') ? 'en' : 'ar';
+            localStorage.setItem('preferred_lang', currentLang);
+            applyLanguage();
+        }
+
+        // دالة تطبيق نصوص اللغة المختارة والاتجاه
+        function applyLanguage() {
+            // تحديث اتجاه المستند واللغة
+            document.documentElement.dir = (currentLang === 'ar') ? 'rtl' : 'ltr';
+            document.documentElement.lang = (currentLang === 'ar') ? 'ar' : 'en';
+
+            // ترجمة جميع العناصر التي تحتوي على data-translate
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[currentLang] && translations[currentLang][key]) {
+                    // إذا كان العنصر هو عنوان الصفحة
+                    if (element.tagName === 'TITLE') {
+                        document.title = translations[currentLang][key];
+                    } else {
+                        element.innerText = translations[currentLang][key];
+                    }
+                }
+            });
+
+            // تحديث نص زر تبديل اللغة
+            const btnSpan = document.querySelector('#langBtn span');
+            if (btnSpan && translations[currentLang] && translations[currentLang]['langBtn']) {
+                btnSpan.innerText = translations[currentLang]['langBtn'];
+            }
+        }
+
+        // عند تحميل الصفحة، نتحقق من اللغة المحفوظة في localStorage
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferred_lang');
+            if (savedLang && (savedLang === 'ar' || savedLang === 'en')) {
+                currentLang = savedLang;
+            }
+            applyLanguage();
+        });
+
+        // دوال التحكم بالمعرض والـ Lightbox
         function openLightbox(index) {
             currentImageIndex = index;
             updateLightboxContent();
@@ -789,7 +1087,8 @@
         function updateLightboxContent() {
             const data = imagesData[currentImageIndex];
             modalImg.src = data.src;
-            modalCaption.innerText = data.caption;
+            const captionKey = data.captionKey;
+            modalCaption.innerText = (translations[currentLang] && translations[currentLang][captionKey]) ? translations[currentLang][captionKey] : '';
         }
 
         function nextImage() {
@@ -797,26 +1096,27 @@
             updateLightboxContent();
         }
 
-        function prevImage() {
-            currentImageIndex = (currentImageIndex - 1 + imagesData.length) % imagesData.length;
-            updateLightboxContent();
-        }
-
         // دعم التحكم عن طريق لوحة المفاتيح
         document.addEventListener('keydown', function (event) {
             if (!modal.classList.contains('active')) return;
-
+            
             if (event.key === 'Escape') {
                 closeLightbox();
             } else if (event.key === 'ArrowRight') {
-                // في وضع RTL (العربي) السهم الأيمن يذهب للصورة السابقة
-                prevImage();
+                // في وضع RTL السهم الأيمن يذهب للصورة السابقة، وفي LTR السهم الأيمن يذهب للتالية
+                if (currentLang === 'ar') {
+                    prevImage();
+                } else {
+                    nextImage();
+                }
             } else if (event.key === 'ArrowLeft') {
-                // السهم الأيسر يذهب للصورة التالية
-                nextImage();
+                if (currentLang === 'ar') {
+                    nextImage();
+                } else {
+                    prevImage();
+                }
             }
         });
     </script>
 </body>
-
 </html>
